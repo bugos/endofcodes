@@ -1,11 +1,14 @@
 <?php
     class FileHelperTest extends UnitTest {
         public function setUp() {
-            $this->content = 'I shall be written safely';
-            $this->directory = 'tests/helpers/file/';
-            $this->filename = $this->directory . 'message.txt';
+            global $config;
 
-            mkdir( $this->directory );
+            $this->content = 'I shall be written safely';
+            // $this->directory = '/tests/helpers/file';
+            //$this->filename = $this->directory . 'message.txt';
+            $this->filename = 'message.txt';
+
+            //mkdir( $this->directory );
         }
         private function readOnlyDirectory() {
             chmod( $this->directory, 0444 );
@@ -18,10 +21,7 @@
             );
         }
         private function emptyWritableDirectory() {
-            chmod( $this->directory, 0666 );
-            echo exec('pwd');
-            $ls = exec('ls -l ' . $this->directory);
-            print_r( $ls );
+            //chmod( $this->directory, 0666 );
             $this->assertDoesNotThrow(
                 function() {
                     safeWrite( $this->filename, $this->content );
@@ -66,7 +66,7 @@
         }
         public function tearDown() {
             $this->safeUnlink( $this->filename );
-            $this->safeUnlink( $this->directory );
+            //$this->safeUnlink( $this->directory );
         }
     }
 

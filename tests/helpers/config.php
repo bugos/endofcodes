@@ -36,8 +36,8 @@
             $s2 = $output;
             var_dump($s1);
             var_dump($s2);
-            echo strcmp($s1, $s2);
-            echo strspn($s1, $s2);
+            echo '1.' . strcmp($s1, $s2) . PHP_EOL;
+            echo '2.' . strspn($s1, $s2) . PHP_EOL;
 
             // The function seems to be working but we are also going to check the formmating by comparing against a prototype file.
             $this->assertSame( $this->prototypeContent, $output, 'The formating must be the same as in the prototype.' );
