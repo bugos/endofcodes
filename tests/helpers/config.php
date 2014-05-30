@@ -34,10 +34,10 @@
 
             $s1 = $this->prototypeContent;
             $s2 = $output;
-            echo htmlspecialchars( var_dump($s1) . '<br>');
-            echo htmlspecialchars( var_dump($s2) . '<br>');
+            var_dump($s1);
+            var_dump($s2);
             echo strcmp($s1, $s2);
-            echo $matchlen = strspn($s1, $s2);
+            echo strspn($s1, $s2);
 
             // The function seems to be working but we are also going to check the formmating by comparing against a prototype file.
             $this->assertSame( $this->prototypeContent, $output, 'The formating must be the same as in the prototype.' );

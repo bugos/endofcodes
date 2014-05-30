@@ -18,7 +18,7 @@
             );
         }
         private function emptyWritableDirectory() {
-            //chmod( $this->directory, 0666 );
+            chmod( $this->directory, 0666 );
             echo exec('pwd');
             $ls = exec('ls -l ' . $this->directory);
             print_r( $ls );
