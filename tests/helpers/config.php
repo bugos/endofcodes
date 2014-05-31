@@ -37,9 +37,7 @@
             var_dump($s1);
             var_dump($s2);
             foreach ( str_split($s1) as $key => $char ){
-                if ($s2[$key] != $char){
-                    echo 'Found:' . $char . 'with'. $s2[$key] .'at'. $key .PHP_EOL;
-                }
+                    echo '1:' . $char . '2:'. $s2[$key] .'@'. $key .PHP_EOL;
             }
             echo '1.' . strcmp($s1, $s2) . PHP_EOL;
             echo '2.' . strspn($s1, $s2) . PHP_EOL;
