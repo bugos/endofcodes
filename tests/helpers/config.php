@@ -36,6 +36,11 @@
             $s2 = $output;
             var_dump($s1);
             var_dump($s2);
+            foreach ( $s1 as $key => $char ){
+                if ($s2[$key] != $char){
+                    echo 'Found:' . $char . 'with'. $s2[$key] .PHP_EOL;
+                }
+            }
             echo '1.' . strcmp($s1, $s2) . PHP_EOL;
             echo '2.' . strspn($s1, $s2) . PHP_EOL;
 
