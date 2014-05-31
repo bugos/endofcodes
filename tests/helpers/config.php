@@ -37,7 +37,7 @@
             var_dump($s1);
             var_dump($s2);
             foreach ( str_split($s1) as $key => $char ){
-                    echo '1:' . $char . '2:'. $s2[$key] .'@'. $key .PHP_EOL;
+                    echo  ord($char). ' '.  ord($s2[$key]).' ' . $key .PHP_EOL;
             }
             echo '1.' . strcmp($s1, $s2) . PHP_EOL;
             echo '2.' . strspn($s1, $s2) . PHP_EOL;
